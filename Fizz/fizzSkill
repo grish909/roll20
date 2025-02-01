@@ -1,0 +1,1 @@
+&{template:default} {{name=**Fizz’s Skill**}}  {{ ?{Show Gif | No, |Yes, [ ](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnFpazNra2F0bXJydW55ZHE5M20xdXB2bXc2MTBlZnVzeXIybTQ2eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iV65Z36EEKG1rVEwAw/giphy.gif)}}}{{**Skill:**= [[1d20 + ?{Modifier}]]}} 

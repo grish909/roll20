@@ -1,0 +1,1 @@
+&{template:default} {{name=**Kage’s Skill**}} {{ ?{Show Gif | No, |Yes, [ ](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXp5c2E3dGtoN2g5bG8xZTh1NmZmMGhrcGF0c2ljZzV5cTBod3gzZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10CopumcRWLMYM/giphy.gif) } }} {{**Skill:**= [[1d20 + ?{Modifier}]]}} 

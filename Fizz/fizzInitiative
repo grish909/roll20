@@ -1,0 +1,1 @@
+&{template:default} {{name=**Fizz's Initiative**}} {{ ?{Show Gif | No, |Yes, [ ](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnBpbXNsaDQ1YWh0NXZnemZwenJiN3k5ZjY5cHQ0dW84bHJlanVoMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ePL05nRDzwCXe/giphy-downsized.gif)}}} {{**Roll:**=[[1d20 + ?{Modifier}&{tracker}]] }} {{**Modifier:**= +[[?{Modifier}]]}}

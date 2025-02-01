@@ -1,0 +1,1 @@
+&{template:default} {{name=**Kage’s Initiative**}} {{ ?{Show Gif | No, |Yes, [ ](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3hjNm53OG5iZWRobWxwMmJrbXZvc3RzdnF6d2dhZGhhYWFrYXU2eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3orifgvLMSvPbCrqBW/giphy.gif) }}} {{**Roll:**=[[1d20 + ?{Modifier} &{tracker}]] }} {{**Modifier:**= +[[?{Modifier}]]}}
