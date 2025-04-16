@@ -1,6 +1,7 @@
-&{template:default} {{name= **Fizz Haste**}} {{}} {{Buff = *So long as Jorio wields his red banner, all allies within 30 feet who can see the banner gain:*
-
-**+1 Attack** (*morale*)
-**+1 Weapon Dmg** (*morale*)
-**+1 Saving Throws** (*morale*) 
-against fear and charm effects.}}
+&{template:default} {{name= **Fizz Haste**}} {{ ?{Show Gif | No, |Yes, [ ](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJ4ODR3MjJod25yeXFnNDgwOG90cndjdDBmd3lndjU0c2o1a2tmcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4YpBwElIMMfrYbgeyH/giphy.gif)}}} {{Buff =
+**One extra attack at full BAB**
+**+1 Attack** (*untyped*)
+**+1 AC** (*dodge*)
+**+1 Reflex** (*dodge*) 
+**Increase all movement speeds by double or 30, whichever is smaller**
+}}

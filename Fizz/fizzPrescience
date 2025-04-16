@@ -1,0 +1,3 @@
+&{template:default} {{name= **Fizz Prescience**}} {{ ?{Show Gif | No, |Yes, [ ](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG9vMXVsejRrbzRjeWVlNTJzcmx2aXN0bXlsbXZtbW56c2piZXN6MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiIzxmDrMqgfZMgGA/giphy.gif)}}} {{**Roll:**= [[1d20]]}} {{
+    At the beginning of your turn, you may, as a free action, roll a single d20. At any point before your next turn, you may use the result of this roll as the result of any d20 roll you are required to make. If you do not use the d20 result before your next turn, it is lost.
+}}
