@@ -1,0 +1,1 @@
+&{template:default} {{name=**Two Weapon Fighting**}}  {{**Longsword Attack vs AC:**= [[1d20cs>19 + 6]]}} {{**Longsword Damage (S):**= [[d8+3]]}} {{**Shortsword Attack vs AC:**= [[1d20cs>19 + 6]]}} {{**Shortsword Damage (S):**= [[d8+1]]}}

@@ -1,0 +1,4 @@
+&{template:default} {{name= **Darkness**}} {{ ?{Show Gif | No, |Yes, [ ](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Fod2M4c2Yzd3ZlYnZnMnc1YnF1djdxemFhaWllbDhlNGhrMm9ubCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7WTqo27pLRYxRtg4/giphy.gif)}}} {{**Range** touch
+**Target** object touched
+**Duration** 1 min./level (D)
+**Saving Throw** none; **Spell Resistance** no}} {{**[Link](https://www.d20pfsrd.com/magic/all-spells/d/darkness)**}}

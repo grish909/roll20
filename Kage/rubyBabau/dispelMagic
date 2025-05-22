@@ -1,0 +1,1 @@
+&{template:default} {{name= **Dispel Magic**}} {{ ?{Show Gif | No, |Yes, [ ](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWtscnhwam5nbXp0eGtxZnJ0cjFkbHBlenluMHpna2FpcnZjdHh5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMRLXa7Ek7aONNK/giphy.gif)}}} {{**Caster Level Check**= [[1d20 + ?{Caster Level}]]}} {{**[Link](https://www.d20pfsrd.com/magic/all-spells/d/dispel-magic)**}}
