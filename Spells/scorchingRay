@@ -1,1 +1,1 @@
-&{template:default} {{name=**Scorching Ray**}} {{**Attack:**= [[1d20 + ?{Attack Modifier}]]}} {{**Damage:**= [[4d6 + ?{Damage}]]}} 
+&{template:default} {{name=**Scorching Ray**}} {{**Attack vs Touch:**= [[1d20 + ?{Attack Modifier}]]}} {{**Damage (Fire):**= [[4d6 + ?{Damage}]]}} {{**Attack vs Touch 2:**= [[1d20 + ?{Attack Modifier}]]}} {{**Damage 2 (Fire):**= [[4d6 + ?{Damage}]]}}

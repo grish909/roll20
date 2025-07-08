@@ -1,0 +1,1 @@
+&{template:default} {{name=**Snowball**}} {{**Attack vs Touch:**= [[1d20 + ?{Attack Modifier}]]}} {{**Damage(Cold):**= [[5d6 + ?{Damage}]]}} {{**Fort Save (DC16):**= Staggered}}
