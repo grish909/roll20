@@ -1,0 +1,1 @@
+&{template:default} {{name=**Swarm**}}  {{**Damage:**= [[d6]]}} {{**Distraction (DC15 Fort):**= *Nauseated*}} {{**Poison (DC15 Fort):**= [[d2]] Con damage}}

@@ -1,0 +1,1 @@
+&{template:default} {{name=**Dagger**}}  {{**Attack vs AC:**= [[1d20cs>19 + 17]]}} {{**Damage (P or S):**= [[d4 + 2]]}} {{*Poison (Fort DC18):*= [[d4]] Con }}

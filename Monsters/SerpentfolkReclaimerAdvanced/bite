@@ -1,0 +1,1 @@
+&{template:default} {{name=**Bite**}}  {{**Attack vs AC:**= [[1d20 + 11]]}} {{**Damage (B,P,S):**= [[d6 + 2]]}} {{*Poison (DC18 Fort):*= [[d4 + 2]] Str }}

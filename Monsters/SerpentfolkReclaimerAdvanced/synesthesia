@@ -1,0 +1,6 @@
+&{template:default} {{name= **Synesthesia**}} {{*Will Negates:*= DC20}} {{Effect =
+**Move at half speed**
+**20% miss chance on attacks (not reducable)**
+**-4 to AC, skill checks and Ref Saves**
+**Conc checks required when casting**
+}}
