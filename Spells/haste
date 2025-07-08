@@ -1,0 +1,7 @@
+&{template:default} {{name= **Haste**}} {{Buff =
+**One extra attack at full BAB**
+**+1 Attack** (*untyped*)
+**+1 AC** (*dodge*)
+**+1 Reflex** (*dodge*) 
+**Increase all movement speeds by double or 30, whichever is smaller**
+}}

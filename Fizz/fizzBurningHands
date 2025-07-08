@@ -1,1 +1,0 @@
-&{template:default} {{name=**Fizz’s Burning Hands**}}  {{ ?{Show Gif | No, |Yes, [ ](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExemlqa2sxYmxqd3FvNWRvOW44dzgyc2NzdmR4cGttbmI1d3E3Y3hxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wR1I3CQLUEh0gReIjf/giphy.gif)}}}{{**Ref Save:**= DC16}}  {{**Fire Damage:** = [[5d4]]}}

@@ -1,1 +1,0 @@
-&{template:default} {{name=**Bernie's Bodyguard**}}  {{ ?{Show Gif | No, |Yes, [ ](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGRtcHJ5dDdyejg5czkweDA0djIxZ3ExandwNWUxenl3ejlqMGJmNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OX8IRwAFRxKJW/giphy.gif)}}}{{**Check:**= [[1d20 + ?{Modifier}]]}} 

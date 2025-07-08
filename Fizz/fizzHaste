@@ -1,7 +1,0 @@
-&{template:default} {{name= **Fizz Haste**}} {{ ?{Show Gif | No, |Yes, [ ](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJ4ODR3MjJod25yeXFnNDgwOG90cndjdDBmd3lndjU0c2o1a2tmcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4YpBwElIMMfrYbgeyH/giphy.gif)}}} {{Buff =
-**One extra attack at full BAB**
-**+1 Attack** (*untyped*)
-**+1 AC** (*dodge*)
-**+1 Reflex** (*dodge*) 
-**Increase all movement speeds by double or 30, whichever is smaller**
-}}

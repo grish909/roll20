@@ -1,0 +1,1 @@
+&{template:default} {{name=**Clix's Enlarged Pick**}}  {{ ?{Show Gif | No, |Yes, [ ](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWF0M21pemYzdWVlMDdvdm5iYnFyemk5aWRnc3d5aDJueTFtOXZkdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZgGbVvxuLqkLK/giphy.gif)}}}{{**Attack:**= [[1d20 + ?{Attack Modifier}]]}} {{**Damage:**= [[1d10 + ?{Damage Roll/Modifier}]]}}  

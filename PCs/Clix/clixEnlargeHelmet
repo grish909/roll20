@@ -1,0 +1,1 @@
+&{template:default} {{name=**Clix's Enlarged Helmet**}}  {{ ?{Show Gif | No, |Yes, [ ](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGs2M3ZpN292NGw3OTZ6aDZxbGJsN3QyMXViOGNpY2R6bXZxcnUzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZtdRnQGPlhnr4XZ5CE/giphy.gif)}}}{{**Attack:**= [[1d20 + ?{Attack Modifier}]]}} {{**Damage:**= [[1d8 + ?{Damage Roll/Modifier}]]}} 
