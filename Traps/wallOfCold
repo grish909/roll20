@@ -1,0 +1,1 @@
+&{template:default} {{name=**Wall of Cold**}}  {{**Inside':**= [[2d6 + 4]] Cold Damage}} {{**Within 10':**= [[2d4]] Cold Damage}} {{**10' to 20':**= [[d4]] Cold Damage}}
