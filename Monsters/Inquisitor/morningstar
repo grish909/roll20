@@ -1,1 +1,1 @@
-&{template:default} {{name=**Morning Star**}}  {{**Attack vs AC:**= [[1d20c+ 5]]}} {{**Damage (B,P):**= [[d8+2]]}}
+&{template:default} {{name=**Morning Star**}}  {{**Attack vs AC:**= [[1d20 + 5]]}} {{**Damage (B,P):**= [[d8+2]]}}

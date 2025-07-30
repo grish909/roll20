@@ -1,1 +1,1 @@
-&{template:default} {{name=**Bite**}}  {{**Attack vs AC:**= [[1d20 + 24]]}} {{**Damage (B,P,S):**= [[d4 + 1]]}} {{**Trip vs CMD:**= [[d20 + 0]]}}
+&{template:default} {{name=**Bite**}}  {{**Attack vs AC:**= [[1d20 + 2]]}} {{**Damage (B,P,S):**= [[d4 + 1]]}} {{**Trip vs CMD:**= [[d20 + 0]]}}
