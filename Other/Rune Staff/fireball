@@ -1,0 +1,1 @@
+&{template:default} {{name=**Fireball**}} {{**Ref Save:**= DC ?{DC}}}  {{**Fire Damage:**= [[?{Caster Level}d6]]}}

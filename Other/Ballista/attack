@@ -1,0 +1,1 @@
+&{template:default} {{name=**Ballista**}}  {{**Attack vs AC:**= [[1d20cs>19 + ?{Attack Modifier}]]}} {{**Damage (P):**= [[3d8]]}} {{**Increment**= 120ft}}

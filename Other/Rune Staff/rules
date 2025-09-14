@@ -1,0 +1,10 @@
+&{template:default} {{name= **Rune Staff**}} {{Rules =
+The rune staff can hold 10 charges.
+It casts a spell through the area of the upper, middle or lower runes.
+It can learn a new spell by having 10 charges cast into it on the same day.
+It can only learn spells with an area.
+The spell level is the number of charges that spell costs or recharges.
+e.g. Burning Hands is 1 charge, Fireball is 3, Scorching Ray is invalid.
+It does not know friend or foe and applies all spells equally.
+It is a staff, so spell trigger activation, either standard or casting time if longer. Doesnt provoke AoO.
+}}
