@@ -1,0 +1,1 @@
+&{template:default} {{name=**Bite**}}  {{**Attack vs AC:**= [[1d20 + 20]]}} {{**Damage (B,P,S):**= [[d8 + 7]]}} {{**Damage (Fire):**= [[d8]]}} {{**Curse:**= DC 23 Fort}}
