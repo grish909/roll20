@@ -1,0 +1,1 @@
+&{template:default} {{name=**Claw**}}  {{**Attack vs AC:**= [[1d20 + 17]]}} {{**Damage (B,S):**= [[d6+7]]}} {{**Sneak Damage (Precision):**= [[2d6]]}} {{**Paralysis:**=  DC22 Fort}}

@@ -1,0 +1,1 @@
+&{template:default} {{name=**Bite**}}  {{**Attack vs AC:**= [[1d20 + 16]]}} {{**Damage (B,P,S):**= [[d8+ 7]]}}  {{**Sneak Damage (Precision):**= [[2d6]]}} {{**Disease:**=  DC22 Fort}} {{**Paralysis:**=  DC22 Fort}}

@@ -1,1 +1,1 @@
-&{template:default} {{name=**Initiative**}} {{**Roll:**=[[1d20 + 1 &{tracker}]] }} {{**Modifier:**= +1}}
+&{template:default} {{name=**Initiative**}} {{**Roll:**=[[1d20 + ?{Modifier} &{tracker}]] }} {{**Modifier:**= +?{Modifier}}}
