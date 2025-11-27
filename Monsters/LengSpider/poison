@@ -1,0 +1,6 @@
+&{template:default} {{name=**Poison**}}  {{*Fort (DC20):*= [[d100]] Confused }} {{
+    01–25	Act normally.
+    26–50	Do nothing but babble incoherently.
+    51–75	Deal 1d8 points of damage + Str modifier to self with item in hand.
+    76–100	Attack nearest creature (for this purpose, a familiar counts as part of the subject’s self).
+}}
