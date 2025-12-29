@@ -1,0 +1,1 @@
+&{template:default} {{name=**Claw**}}  {{**Attack vs AC:**= [[1d20cs19 + 18]]}} {{**Damage (B,S):**= [[2d8+6]]}} {{**Fear (DC20 Will):**= [[d4]] Frightened}} {{**Grab vs CMD:**= [[d20 + 22]]}}
