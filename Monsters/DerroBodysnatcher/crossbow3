@@ -1,0 +1,1 @@
+&{template:default} {{name=**Repeating Crossbow**}}  {{**Attack vs AC:**= [[1d20cs>19 + 9]]}} {{**Damage (P):**= [[d8 + 2]]}} {{**Sneak Attack:**= [[5d6]]}}
