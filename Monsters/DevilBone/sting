@@ -1,0 +1,1 @@
+&{template:default} {{name=**Sting**}}  {{**Attack vs AC:**= [[1d20 + 14]]}} {{**Damage (P):**= [[3d4 + 5]]}} {{*Poison (DC20 Fort):*= [[d3]] Str }}
