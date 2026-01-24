@@ -1,0 +1,4 @@
+&{template:default} {{name= **Create Pit**}} {{**Reflex Save:**= DC17 (+2 if adjacent)}} {{Effect =
+**10x10 foot, 30 ft deep**
+**Climb DC 25** 
+}}

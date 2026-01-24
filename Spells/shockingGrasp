@@ -1,0 +1,1 @@
+&{template:default} {{name= **Shocking Grasp**}} {{**Attack:**= [[1d20 + ?{Attack Modifier} (+3 if metal armour)]]}} {{**SR:**= Yes}}  {{** Electricity Damage:*= [[5d6]]}}

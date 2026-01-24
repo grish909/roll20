@@ -1,0 +1,7 @@
+&{template:default} {{name= **Slow**}} {{**Will Save:**= DC18}} {{Buff =
+**Staggered**
+**-1 Attack** (*untyped*)
+**-1 AC** (*dodge*)
+**-1 Reflex** (*dodge*) 
+**Half speed (Rounded down to nearest 5)**
+}}
