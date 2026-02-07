@@ -1,0 +1,1 @@
+&{template:default} {{name=**Chain**}}  {{**Attack vs AC:**= [[1d20 + 17]]}} {{**Damage (P):**= [[2d6+7]]}}  {{**Damage (Elec):**= [[d6]]}}  {{**Trip vs CMD:**= [[1d20 + 18]]}}
