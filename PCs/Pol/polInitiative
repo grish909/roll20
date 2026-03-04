@@ -1,0 +1,1 @@
+&{template:default} {{name=**Pol's Initiative**}} {{ ?{Show Gif | No, |Yes, [ ](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjdvOGxma2MyeHR4YWFkcHZ3ZXFhc2g1eTFyMmM0dzJ5cjlvMW43dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KQIj1SLiJJcEU/giphy.gif)}}} {{**Roll:**=[[1d20 + ?{Modifier} &{tracker}]] }} {{**Modifier:**= +[[?{Modifier}]]}}
