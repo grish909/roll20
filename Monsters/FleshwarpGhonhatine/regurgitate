@@ -1,0 +1,7 @@
+&{template:default} {{name=Regurgitate}} {{Attack=[[1d20+6]] (20 ft., splash)}} {{Damage=[[2d6]] acid}} {{desc=Target hit must make two DC 24 Fortitude saves:
+
+1. vs Disease
+2. vs Nausea (1 min)
+
+   All adjacent creatures: DC 24 Fort or sickened (1 min).
+   }}

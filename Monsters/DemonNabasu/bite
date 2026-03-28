@@ -1,0 +1,1 @@
+&{template:default} {{name=Bite}} {{Attack=[[1d20+15]] vs AC}} {{Damage=[[1d8+6]]}} {{Sneak Attack=[[2d6]] if applicable}}

@@ -1,0 +1,1 @@
+&{template:default} {{name=**Claw**}} {{Attack=[[1d20+20]]}} {{Damage (B,S)=[[1d6+9]]}}

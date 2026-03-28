@@ -1,0 +1,1 @@
+&{template:default} {{name=Claw}} {{Attack=[[1d20+16]]}} {{Damage=[[1d6+8]]}}

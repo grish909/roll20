@@ -1,0 +1,5 @@
+&{template:default} {{name=**Dragon Sticks**}} {{**Roll:**= [[d3]]}} {{Choices =
+**1 Fort**
+**2 Ref**
+**3 Will**
+}}

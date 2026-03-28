@@ -1,0 +1,6 @@
+&{template:default} {{name=**Deafened**}} {{
+    Creature cannot hear. 
+    -10 penalty on initiative checks, 
+    automatic failure on hearing-based Perception checks, 
+    20% chance to miscast spell with verbal components.
+}}
