@@ -1,0 +1,4 @@
+&{template:default} {{name=**Dazzled**}} {{
+    Creature is unable to see well because of overstimulation of the eyes,
+    takes a -1 penalty on attack rolls and sight-based Perception checks.
+}}

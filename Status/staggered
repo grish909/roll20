@@ -1,0 +1,5 @@
+&{template:default} {{name=**Staggered**}} {{
+    Creature can take a single move action or standard action each round,
+    but not both and cannot take full-round actions,
+    can still take free, swift, and immediate actions.
+}}

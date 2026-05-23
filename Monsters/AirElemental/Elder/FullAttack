@@ -1,0 +1,1 @@
+&{template:default} {{name=**Full Attack**}}  {{**Attack 1 vs AC:**= [[1d20 + 25]]}} {{**Damage 1 (B):**= [[2d8+9]]}} {{**Attack 2 vs AC:**= [[1d20 + 25]]}} {{**Damage 2 (B):**= [[2d8+9]]}}

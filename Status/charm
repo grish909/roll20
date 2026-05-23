@@ -1,0 +1,6 @@
+&{template:default} {{name=**Charmed**}} {{
+    Creature regards the charmer as a trusted friend and ally,
+    retains free will, but gives great weight to the charmer's suggestions,
+    fights former allies only if they threaten the charmer,
+    and never obeys suicidal or grievously harmful commands.
+}}

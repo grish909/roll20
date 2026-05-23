@@ -1,0 +1,6 @@
+&{template:default} {{name=**Stunned**}} {{
+    Creature drops everything held,
+    cannot take actions,
+    takes a -2 penalty to AC,
+    and loses Dex bonus to AC.
+}}

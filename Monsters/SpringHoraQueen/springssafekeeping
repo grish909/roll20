@@ -1,0 +1,1 @@
+&{template:default} {{name=**Spring's Safekeeping (Su)**}} {{**Action:**=Immediate}} {{**Trigger:**=Queen or ally within 30 ft. that she can see fails a save, attack roll, or skill check}} {{**Effect:**=Enhancement bonus based on season: +4 (vernal equinox month), +2 (month before/after), +1 (other months except autumnal equinox month)}} {{**Cooldown:**=[[1d4]] rounds}}

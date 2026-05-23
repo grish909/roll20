@@ -1,0 +1,9 @@
+&{template:default} {{name=**Whirlwind**}} {{
+    Creature transforms into a whirlwind for up to 1 round per 2 HD,
+    keeps its fly speed or gains one equal to base land speed,
+    does not provoke attacks of opportunity,
+    cannot make normal attacks or threaten an area,
+    creatures one size category or more smaller may be caught, damaged, and lifted,
+    trapped creatures take -4 Dex and -2 attack rolls,
+    and debris clouds obscure vision beyond 5 feet and block spells unless the caster succeeds at concentration.
+}}

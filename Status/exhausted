@@ -1,0 +1,6 @@
+&{template:default} {{name=**Exhausted**}} {{
+    Creature moves at half speed,
+    cannot run or charge,
+    takes a -6 penalty to Str and Dex,
+    and after 1 hour of complete rest becomes fatigued.
+}}

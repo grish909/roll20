@@ -1,0 +1,6 @@
+&{template:default} {{name=**Fatigued**}} {{
+    Creature cannot run or charge,
+    takes a -2 penalty to Str and Dex,
+    if an effect would cause fatigue again, it becomes exhausted,
+    and after 8 hours of complete rest, fatigue ends.
+}}
