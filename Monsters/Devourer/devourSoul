@@ -1,0 +1,1 @@
+&{template:default} {{name=**Devour Soul**}} {{**Attack vs Touch:**= [[1d20 + 18]]}} {{**Damage:**= [[12d6+18]]}} {{**Fortitude Partial:**= DC22 reduces damage to [[3d6+18]]}} {{**Effect:**= A creature slain by this touch has its soul trapped in the devourer's chest until the devourer is destroyed or the soul is freed by magic.}}
