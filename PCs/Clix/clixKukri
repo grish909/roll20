@@ -1,0 +1,1 @@
+&{template:default} {{name=**Clix's Kukri**}}  {{ ?{Show Gif | No, |Yes, [ ](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExenN6cGR5ODV3MGZiYndjdmp0dHg4YTFrNmNueWZkbWEwZjgwajNkeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3B8rHP89iUUZlcsoqf/giphy.gif)}}}{{**Attack:**= [[1d20cs>18 + ?{Attack Modifier}]]}} {{**Damage:**= [[1d4 + ?{Damage Roll/Modifier}]]}} 
