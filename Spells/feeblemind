@@ -1,0 +1,6 @@
+&{template:default} {{name= **Feeblemind**}} {{**Will Save (negates):**= DC 18}} {{**SR:**=Yes}} {{Effect =
+**Target is unable to cast spells, use Intelligence or Charisma based skills, understand language or communicate coherently.**
+**Intelligence and Charisma reduced to 1.**
+**It still knows who its friends are and can follow and protect them.**
+**Arcane casters take a -4 to saving throws.**
+}}
