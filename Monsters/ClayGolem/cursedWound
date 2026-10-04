@@ -1,0 +1,1 @@
+&{template:default} {{name=**Cursed Wound (Ex)**}} {{**Trigger:**= Damage from a clay golem slam}} {{**Effect:**= The damage does not heal naturally and resists magical healing}} {{**Check:**= DC 26 caster level check required for magical healing to work}} {{**Special:**= This is an extraordinary wound effect, not a save-based curse}}
