@@ -1,0 +1,1 @@
+&{template:default} {{name=**Bite**}}  {{**Attack vs AC:**= [[1d20cs>19 + 21]]}} {{**Damage (P,S):**= [[8d6+12]]}} {{**Grab:**= [[1d20 + 42]]}}

@@ -1,0 +1,1 @@
+&{template:default} {{name=**Mind Fog (SLA)**}} {{**Frequency:**= 1/day}} {{**Will Save:**= DC19 negates (no further saves needed if passed)}} {{**Effect:**= -10 penalty on Wisdom checks and Will saves while in fog and for [[2d6]] rounds after}} {{**CL:**= 6th}}

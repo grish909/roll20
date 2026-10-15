@@ -1,0 +1,1 @@
+&{template:default} {{name=**Confusion Command (Su)**}} {{**Action:**= Immediate action}} {{**Range:**= 30 ft.}} {{**Effect:**= Issues a telepathic command to a confused creature, choosing its result from the confusion table instead of it rolling randomly this round.}}

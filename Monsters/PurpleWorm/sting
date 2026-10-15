@@ -1,0 +1,1 @@
+&{template:default} {{name=**Sting**}}  {{**Attack vs AC:**= [[1d20 + 25]]}} {{**Damage (P):**= [[2d8+12]]}} {{**Poison:**= Fort DC25 negates}}

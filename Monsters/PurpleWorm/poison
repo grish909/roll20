@@ -1,0 +1,1 @@
+&{template:default} {{name=**Poison (Ex)**}} {{**Save:**= Fort DC25 (Con-based)}} {{**Frequency:**= 1/round for 6 rounds}} {{**Effect:**= [[1d4]] Str damage}} {{**Cure:**= 3 consecutive saves}}

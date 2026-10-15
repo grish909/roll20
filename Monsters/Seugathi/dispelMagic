@@ -1,0 +1,1 @@
+&{template:default} {{name=**Dispel Magic (SLA)**}} {{**Frequency:**= 3/day}} {{**Dispel Check:**= [[1d20 + 6]]}} {{**CL:**= 6th}}
