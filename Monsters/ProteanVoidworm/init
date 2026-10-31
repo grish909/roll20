@@ -1,1 +1,1 @@
-&{template:default} {{name=**Protean Voidworm — Initiative**}} {{Roll=[[1d20 + 3 &{tracker}]]}}
+&{template:default} {{name=**Initiative**}} {{**Roll:**=[[1d20 + 3 &{tracker}]] }} {{**Modifier:**= +3}}
