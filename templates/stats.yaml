@@ -31,6 +31,7 @@ fullAttacks:
   longswordFA:               # attacks in order; repeated weapons step down the iteratives,
     attacks: [longsword, longsword, bite]   # repeated natural attacks reuse their bonus
     # label: Full Attack     # default "Full Attack"
+    # modifier: -2           # added to every attack (spell combat, two-weapon fighting)
 
 poison:
   dc: 15

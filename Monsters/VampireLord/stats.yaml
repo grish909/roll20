@@ -14,7 +14,7 @@ attacks:
     type: S
     crit: 17
     fields:
-      Cold: "[[1d6]]"        # frost = +1d6 cold (stat block prints 2d6)
+      Cold: "[[2d6]]"        # as printed in the stat block
   slam:
     bonus: 13
     damage: 1d4+8
@@ -24,6 +24,14 @@ attacks:
 
 fullAttacks:
   longswordFA: [longsword, longsword, slam]
+  spellCombat:               # magus: full attack with the sword and cast a spell with the free hand (no slam)
+    label: Spell Combat
+    attacks: [longsword, longsword]
+    modifier: -2
+    fields:
+      Spell: Cast one spell (standard action or less) before or after the attacks; a touch spell can be delivered through a sword hit (spellstrike)
+      Concentration: "[[1d20 + 20]] (includes +2 improved spell combat)"
+      Extra Penalty: May take up to -4 more on the attacks for +2 concentration per -1 (greater spell combat)
 
 spells:
   balefulPolymorph:

@@ -1,1 +1,1 @@
-&{template:default} {{name=**Poison**}}  {{*Fort (DC18):*= [[d4]] Con }}
+&{template:default} {{name=**Poison**}}  {{**Fort (DC18):**= [[d4]] Con }}

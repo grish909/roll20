@@ -1,1 +1,1 @@
-&{template:default} {{name=**Poison**}}  {{*Fort (DC16):*= [[d2]] Str }}
+&{template:default} {{name=**Poison**}}  {{**Fort (DC16):**= [[d2]] Str }}

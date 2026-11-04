@@ -68,6 +68,8 @@ def check_macro(path):
             err(rel, f"unbalanced '**' in field label {label.strip()!r}")
         if re.match(r"\s*\*\*\s", label):
             err(rel, f"space after opening '**' in {label.strip()!r} (won't render bold)")
+        if re.match(r"\s*\*[^*]", label):
+            err(rel, f"single '*' around label {label.strip()!r} renders italic; use '**' for bold")
 
     if path.name == "init":
         m = INIT_RE.match(body)

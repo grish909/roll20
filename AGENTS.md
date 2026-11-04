@@ -29,6 +29,7 @@ Rules:
 - An attack's extra `fields` (e.g. `Cold: "[[1d6]]"` for a frost weapon, energy drain on a slam) are repeated and numbered on every hit in its full attack (`Cold 1`, `Cold 2`).
 - Bake the creature's real numbers into its own spell macros (DC, CL, touch bonus) rather than pointing at the generic `Spells/` macros, which prompt for caster level and use other DCs.
 - Stat-block bonuses usually already include the creature's own auras or constant buffs (e.g. the nightwing's +2 desecrating aura, *magic fang*); don't add them again. Derive touch bonuses from BAB + Str (melee) / Dex (ranged) + size, plus the same always-on bonuses, and note the arithmetic in a YAML comment.
+- A full attack's `modifier: -2` is added to every attack in it — use it for routines like magus spell combat or two-weapon fighting, so you don't need a duplicate attack entry (which would also generate an unwanted single-attack macro). See `VampireLord/spellCombat`.
 - `bonus: [11, 6]` lists iteratives. In a full attack, each repeat of a weapon takes the next iterative; repeated natural attacks (2 claws) reuse their single bonus.
 - Older creatures are hand-written macros with no `stats.yaml`; leave them unless asked to convert. To convert one, write the `stats.yaml`, rebuild, and diff the output against the old files (whitespace changes are expected; anything else is a mistake in the yaml or a bug in the old macro).
 - If a new macro pattern keeps recurring under `abilities:`, add a proper section for it to `build.py` and `templates/stats.yaml`.
@@ -52,7 +53,8 @@ Every macro is a single line. The exception is long descriptive text (status con
 - Swallow whole: separate `swallowWhole` macro — `{{**Damage (B):**= [[dice]] per round}} {{**Stomach:**= ACn, n hp to cut free}}`.
 - Spell-like abilities (SLA): one macro per ability, named after the spell (e.g. `suggestion`, `mindFog`), with `{{**Frequency:**= n/day}} {{**Will/Fort Save:**= DCn ...}} {{**CL:**= nth}}`. Look up the actual spell mechanics (d20pfsrd spell page) rather than guessing — e.g. *mind fog* is Will negates / no further saves if passed / -10 Wis checks & Will saves while in the fog; *phantasmal killer* is Will disbelief then Fortitude partial (3d6 dmg) or death.
 
-- Bold labels must hug their text: `{{**Fire Damage:**=`, not `{{** Fire Damage:*=` (a space after `**` or a lone `*` won't render bold).
+- Bold labels must hug their text: `{{**Fire Damage:**=`, not `{{** Fire Damage:*=` (a space after `**` or a lone `*` won't render bold). Every field label is bold — older macros used `{{*Label:*=` (italic); those were all converted.
+- When a stat block number looks off against the rules (e.g. the vampire lord's frost longsword printed as +2d6 cold, where frost is normally +1d6), ask the user; they may prefer the printed number. VampireLord uses the printed 2d6 by request.
 
 ## Linting
 
@@ -60,7 +62,7 @@ Run `python3 lint.py` after adding or editing macros (or `python3 lint.py Monste
 - file/folder naming (lowerCamelCase files, PascalCase folders, no spaces/commas/punctuation), including git-tracked names whose case differs from disk
 - every creature folder has an init (with the exceptions above)
 - macros start with `&{template:` and all `{ }` / `[ ]` pairs balance — a missing `]` silently breaks the roll in Roll20
-- `**` bold markup in field labels is balanced and has no leading space
+- `**` bold markup in field labels is balanced and has no leading space, and labels don't use single `*` (italic) — italics are fine in values
 - `init` matches the standard template and the roll modifier equals the displayed one
 - `xFA` Attack 1 bonus equals the single-attack macro `x`
 - poison DCs quoted on attack macros match the folder's `poison` macro

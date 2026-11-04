@@ -138,7 +138,7 @@ def numbered(label, n):
 def build_full_attack(key, spec, stats):
     if isinstance(spec, list):
         spec = {"attacks": spec}
-    check_keys(f"fullAttacks.{key}", spec, ["label", "attacks", "fields"], ["attacks"])
+    check_keys(f"fullAttacks.{key}", spec, ["label", "attacks", "modifier", "fields"], ["attacks"])
     attacks = stats.get("attacks") or {}
     for a in spec["attacks"]:
         if a not in attacks:
@@ -150,6 +150,7 @@ def build_full_attack(key, spec, stats):
         i = seen.get(a, 0)
         seen[a] = i + 1
         bonus = atk["bonuses"][min(i, len(atk["bonuses"]) - 1)]  # iteratives in order; natural attacks repeat
+        bonus += spec.get("modifier", 0)  # e.g. -2 for spell combat / two-weapon fighting
         atk_label, dmg_label = attack_labels(atk, n, show_name)
         fields += [(atk_label, attack_roll(atk, bonus)), (dmg_label, roll(atk["damage"]))]
         if atk.get("grab"):
