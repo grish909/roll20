@@ -14,6 +14,22 @@ Every creature folder has an `init` macro. That's the only mandatory file. Excep
 
 Renaming on macOS: the filesystem is case-insensitive, so `git mv Init init` (or a plain Finder rename) can leave git tracking the old capitalisation. Rename in two steps: `git mv Init tmp && git mv tmp init`. The linter flags this.
 
+## Generating macros from stats.yaml (preferred for new creatures)
+
+New monsters and NPCs should be written as a `stats.yaml` in the creature folder, not as hand-written macros:
+
+1. `python3 build.py --new Monsters/CreatureName` — copies `templates/stats.yaml` (which documents every option) into the folder.
+2. Fill it in from the stat block (see *Sourcing stat blocks*), deleting sections you don't need.
+3. `python3 build.py Monsters/CreatureName` — writes the macro files. Commit both `stats.yaml` and the generated macros.
+
+Rules:
+- In a folder with `stats.yaml`, every macro comes from it. Never hand-edit a generated macro — change `stats.yaml` and rebuild. Anything that doesn't fit `attacks`/`fullAttacks`/`poison`/`maintain`/`swallowWhole`/`slas` goes under `abilities:` as free-form fields.
+- `build.py --check` (run by the pre-commit hook) fails if a generated macro is out of date or a folder has a macro that isn't in its `stats.yaml`. It never deletes files — remove stale ones yourself.
+- `bonus: [11, 6]` lists iteratives. In a full attack, each repeat of a weapon takes the next iterative; repeated natural attacks (2 claws) reuse their single bonus.
+- Older creatures are hand-written macros with no `stats.yaml`; leave them unless asked to convert. To convert one, write the `stats.yaml`, rebuild, and diff the output against the old files (whitespace changes are expected; anything else is a mistake in the yaml or a bug in the old macro).
+- If a new macro pattern keeps recurring under `abilities:`, add a proper section for it to `build.py` and `templates/stats.yaml`.
+- `build.py` needs PyYAML: run `./setup.sh` once per clone. `lint.py` and the hook's lint step need only plain `python3`.
+
 ## Macro format
 
 Every macro is a single line. The exception is long descriptive text (status conditions in `Status/`, `rules` cards, spell/ability effect lists), which may break across lines inside a `{{ }}` field:
@@ -24,7 +40,7 @@ Every macro is a single line. The exception is long descriptive text (status con
 
 - `init`: `&{template:default} {{name=**Initiative**}} {{**Roll:**=[[1d20 + N &{tracker}]] }} {{**Modifier:**= +N}}` (use `- N` for negative modifiers).
 - Attack macros: `{{**Attack vs AC:**= [[1d20 + N]]}} {{**Damage (<type letters>):**= [[XdY+Z]]}}`. Damage type uses letter codes: B = bludgeoning, P = piercing, S = slashing (combine as needed, e.g. `(B,P,S)`).
-- Crit range weapons (19-20, 18-20): use `1d20cs>19 + N` / `1d20cs>17 + N` instead of a plain `1d20` — this flags a critical on the raw die without doubling damage automatically (GM doubles manually). Note `(x3)`/`(x4)` in the field label for multiplier weapons but still don't auto-multiply damage.
+- Crit range weapons (19-20, 18-20): use `1d20cs>19 + N` / `1d20cs>18 + N` instead of a plain `1d20` — this flags a critical on the raw die (Roll20's `cs>N` means N or higher, so 18-20 is `cs>18`) without doubling damage automatically (GM doubles manually). Note `(x3)`/`(x4)` in the field label for multiplier weapons but still don't auto-multiply damage.
 - Full-attack routines get their own `*FA` or `Full Attack` macro with numbered fields: `Attack 1 vs AC`, `Damage 1`, `Attack 2 vs AC`, `Damage 2`, etc. The single-attack macro (no suffix) always uses the *highest* iterative attack bonus.
 - Saves/special abilities with no attack roll still get their own macro, e.g. `{{**Will Save:**= DC18 negates}}`. Only give a dice roll ([[ ]]) where the ability actually deals rollable damage/duration — pure buffs with no save and no roll (mage armor, levitate, haste-type self-buffs) are skipped entirely, they don't get macros.
 - Poison: separate `poison` macro — `{{**Save:**= Fort DCn (Con-based)}} {{**Frequency:**=...}} {{**Effect:**= [[dice]] ...}} {{**Cure:**=...}}`. Reference it from the attack macro that delivers it (e.g. `{{**Poison:**= Fort DCn negates}}` on the `bite`/`sting` macro) rather than duplicating the full text there.
@@ -45,7 +61,7 @@ Run `python3 lint.py` after adding or editing macros (or `python3 lint.py Monste
 - `xFA` Attack 1 bonus equals the single-attack macro `x`
 - poison DCs quoted on attack macros match the folder's `poison` macro
 
-A pre-commit hook (`.githooks/pre-commit`) runs the linter automatically and blocks the commit on errors. Enable it once per clone with `git config core.hooksPath .githooks`.
+A pre-commit hook (`.githooks/pre-commit`) runs the linter and `build.py --check` automatically and blocks the commit on errors. `./setup.sh` enables it (once per clone).
 
 When a new convention is added here, add a matching check to `lint.py` if it can be checked mechanically.
 
@@ -58,6 +74,7 @@ Pull stats from d20pfsrd via WebFetch. The first fetch summarizes — always do 
 ## Reference examples already in the repo
 
 - `Allip`, `Bodak`, `Gug`, `DenizenOfLeng` — minimal attack-only creatures.
+- `Seugathi`, `CrimsonWorm`, `Cyclops` — built from `stats.yaml`; copy these when writing a new one.
 - `GenieMarid`, `Cyclops` — single attack + full-attack (`*FA`) pairing, crit-range weapon syntax.
 - `Devourer` — special attack with no roll, text-only effect field.
 - `Tendriculos`, `FormlessSpawn`, `SnakeConstrictorGiantAnaconda`, `JellyTar` — grab/maintain/swallow/constrict patterns.

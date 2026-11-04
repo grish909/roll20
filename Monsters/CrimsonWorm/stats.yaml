@@ -1,0 +1,30 @@
+init: -2
+cmb: 42
+
+attacks:
+  bite:
+    bonus: 21
+    damage: 8d6+12
+    type: P,S
+    crit: 19
+    grab: true
+  sting:
+    bonus: 21
+    damage: 4d6+12
+    type: P
+    poison: true
+
+poison:
+  dc: 27
+  frequency: 1/round for 6 rounds
+  effect: "[[1d4]] Str damage"
+  cure: 3 consecutive saves
+
+maintain:
+  note: On success, may attempt to swallow whole instead of dealing bite damage
+
+swallowWhole:
+  damage: 8d6+18
+  type: B
+  ac: 21
+  hp: 20

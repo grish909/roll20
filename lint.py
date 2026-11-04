@@ -85,7 +85,7 @@ def first_attack_bonus(path):
 def check_creature(folder):
     """Folder-level checks for a creature folder (one that directly holds macros)."""
     rel = folder.relative_to(ROOT)
-    files = {p.name: p for p in folder.iterdir() if p.is_file()}
+    files = {p.name: p for p in folder.iterdir() if p.is_file() and p.name != "stats.yaml"}
 
     has_init = "init" in files or any(n.endswith("Initiative") for n in files)
     # Companions nested under a PC (e.g. PCs/Kage/rubyTiger) act on the PC's initiative.
@@ -144,8 +144,8 @@ def main():
         paths = [target] + (list(target.rglob("*")) if target.is_dir() else [])
         for p in paths:
             rel = p.relative_to(ROOT)
-            if any(part.startswith(".") for part in rel.parts):
-                continue
+            if any(part.startswith(".") for part in rel.parts) or p.name == "stats.yaml":
+                continue  # stats.yaml is build.py's input, not a macro
             if p.is_file():
                 if not FILE_NAME_RE.match(p.name):
                     err(rel, "macro filename should be lowerCamelCase with no extension")

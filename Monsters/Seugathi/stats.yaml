@@ -1,0 +1,66 @@
+source: https://www.d20pfsrd.com/bestiary/monster-listings/aberrations/seugathi/
+
+init: 9
+cl: 6
+
+attacks:
+  shortSword:
+    label: Mwk Short Sword
+    bonus: [11, 6]
+    damage: 1d8+3
+    type: P
+    crit: 19
+  bite:
+    bonus: 5
+    damage: 1d8+1
+    type: P
+    poison: true
+
+fullAttacks:
+  shortSwordFA: [shortSword, shortSword, bite]
+
+poison:
+  dc: 17
+  frequency: 1/round for 6 rounds
+  effect: "[[1d2]] Wis damage and deafness (persists as long as Wis damage lasts)"
+  cure: 2 consecutive saves
+
+slas:
+  detectThoughts:
+    frequency: At will
+    save: Will DC16 negates
+  confusionSLA:
+    label: Confusion (SLA)
+    frequency: 3/day
+    save: Will DC18 negates
+  dispelMagic:
+    frequency: 3/day
+    fields:
+      Dispel Check: "[[1d20 + 6]]"
+  suggestion:
+    frequency: 3/day
+    save: Will DC17 negates
+  mindFog:
+    frequency: 1/day
+    save: Will DC19 negates (no further saves needed if passed)
+    fields:
+      Effect: -10 penalty on Wisdom checks and Will saves while in fog and for [[2d6]] rounds after
+  phantasmalKiller:
+    frequency: 1/day
+    save: Will DC18 disbelief negates
+    fields:
+      Fortitude Save (DC18): Partial - [[3d6]] damage; failed = death from fear
+
+abilities:
+  auraOfMadness:
+    label: Aura of Madness (Su)
+    fields:
+      Range: 30 ft.
+      Will Save: DC20 negates (mind-affecting)
+      Effect: Confused for 1 round. 5 consecutive failed saves = permanently insane (as *insanity*).
+  confusionCommand:
+    label: Confusion Command (Su)
+    fields:
+      Action: Immediate action
+      Range: 30 ft.
+      Effect: Issues a telepathic command to a confused creature, choosing its result from the confusion table instead of it rolling randomly this round.

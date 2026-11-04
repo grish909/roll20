@@ -1,0 +1,26 @@
+init: -1
+
+attacks:
+  greataxe:
+    bonus: [11, 6]
+    damage: 3d6+7
+    type: S
+    multiplier: 3
+  greataxePA:
+    label: Greataxe(PA)
+    bonus: [9, 4]
+    damage: 3d6+13
+    type: S
+    multiplier: 3
+  heavyCrossbow:
+    bonus: 5
+    damage: 2d8
+    type: P
+    crit: 19
+    multiplier: 3
+
+fullAttacks:
+  fullAttack: [greataxe, greataxe]
+  fullAttackPA:
+    label: Full Attack(PA)
+    attacks: [greataxePA, greataxePA]

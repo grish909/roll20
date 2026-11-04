@@ -1,5 +1,15 @@
 #!/bin/sh
-# Lint macros before each commit. Enable once per clone with:
-#   git config core.hooksPath .githooks
+# Runs before each commit. Enabled by ./setup.sh (or: git config core.hooksPath .githooks).
 # Bypass in a pinch with: git commit --no-verify
-exec python3 "$(git rev-parse --show-toplevel)/lint.py"
+root="$(git rev-parse --show-toplevel)"
+python3 "$root/lint.py" || exit 1
+
+# Generated macros must match their stats.yaml. Needs PyYAML (from ./setup.sh);
+# if it's missing we skip rather than block commits on machines that only edit macros by hand.
+if [ -n "$(git ls-files '*stats.yaml')" ]; then
+  if [ -x "$root/.venv/bin/python" ] || python3 -c 'import yaml' 2>/dev/null; then
+    python3 "$root/build.py" --check || exit 1
+  else
+    echo "note: skipping build.py --check (PyYAML not installed; run ./setup.sh)"
+  fi
+fi

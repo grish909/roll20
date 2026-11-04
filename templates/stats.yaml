@@ -1,0 +1,67 @@
+# Creature stat file. `python3 build.py <folder>` turns this into Roll20 macros.
+# Every section except `init` is optional — delete what you don't need.
+# Each key under attacks/fullAttacks/slas/abilities becomes a macro file of that name,
+# so keys must be lowerCamelCase (e.g. shortSword, swallowWhole).
+
+source: https://www.d20pfsrd.com/bestiary/...   # where the stats came from (not used in macros)
+
+init: 5            # initiative modifier (negative is fine: -2)
+cmb: 18            # grapple CMB — needed for `grab: true` attacks and `maintain`
+cl: 6              # caster level for SLAs (can also be set per SLA)
+
+attacks:
+  longsword:                 # -> macro file "longsword"
+    label: Mwk Longsword     # display name (default: from key, "longsword" -> "Longsword")
+    bonus: [12, 7]           # one number, or the iteratives; the single-attack macro uses the first
+    damage: 1d8+4
+    type: S                  # B, P, S, combos like "B,P,S", or words like Acid / Fire
+    crit: 19                 # threat range starts at: 19 -> 19-20 (1d20cs>19), 18 -> 18-20
+    # multiplier: 3          # shows (x3) in the label; damage is not auto-multiplied
+    # vs: Touch              # attack targets Touch AC instead of AC
+  bite:
+    bonus: 7
+    damage: 1d6+2
+    type: P
+    poison: true             # adds "Poison: Fort DCn negates" using the poison section
+    # grab: true             # adds "Grab: [[1d20 + cmb]]"
+    # fields:                # any extra fields, appended in order
+    #   Trip: "[[1d20 + 10]]"
+
+fullAttacks:
+  longswordFA:               # attacks in order; repeated weapons step down the iteratives,
+    attacks: [longsword, longsword, bite]   # repeated natural attacks reuse their bonus
+    # label: Full Attack     # default "Full Attack"
+
+poison:
+  dc: 15
+  # save: Fort               # default Fort
+  # basis: Con               # default Con -> "(Con-based)"
+  frequency: 1/round for 6 rounds
+  effect: "[[1d2]] Str damage"     # quote anything containing [[ ]], : or #
+  cure: 1 save
+
+# maintain:                  # -> "Maintain Grapple" macro using cmb
+#   note: On success, may attempt to swallow whole instead of dealing bite damage
+
+# swallowWhole:
+#   damage: 2d6+8
+#   type: B
+#   ac: 15
+#   hp: 10
+
+slas:
+  suggestion:                # -> "Suggestion (SLA)"
+    frequency: 3/day
+    save: Will DC17 negates  # starts with Fort/Ref/Will -> "Will Save: DC17 negates"
+  # dispelMagic:
+  #   frequency: 3/day
+  #   fields:
+  #     Dispel Check: "[[1d20 + 6]]"
+
+abilities:                   # anything else: a named card with free-form fields
+  frightfulPresence:
+    label: Frightful Presence (Su)
+    fields:
+      Range: 30 ft.
+      Will Save: DC16 negates
+      Effect: Shaken for 5d6 rounds
