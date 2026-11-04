@@ -1,1 +1,1 @@
-&{template:default} {{name=**Breath Weapon**}}  {{**Reflex Save:**= DC17 (Half)}} {{**Damage (Cold):**= [[6d6]]}} 
+&{template:default} {{name=**Breath Weapon**}}  {{**Reflex Save:**= DC17 (Half)}} {{**Damage (Cold):**= [[6d6]]}} {{**Recharge:**= Usable again in [[1d4]] rounds}}

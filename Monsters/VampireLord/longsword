@@ -1,0 +1,1 @@
+&{template:default} {{name=**+1 Frost Longsword**}} {{**Attack vs AC:**= [[1d20cs>17 + 20]]}} {{**Damage (S):**= [[1d8+11]]}} {{**Cold:**= [[1d6]]}}

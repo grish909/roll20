@@ -1,0 +1,130 @@
+source: https://www.d20pfsrd.com/bestiary/npc-s/npcs-cr-15/vampire-lord-cr-15/
+
+# Half-elf vampire magus 14. Melee touch +18 (BAB 10 + Str 8), ranged touch +12 (BAB 10 + Dex 2).
+# Spell DCs: Int 18 -> 10 + spell level + 4.
+init: 6
+cmb: 18
+cl: 14
+
+attacks:
+  longsword:
+    label: +1 Frost Longsword
+    bonus: [20, 15]
+    damage: 1d8+11
+    type: S
+    crit: 17
+    fields:
+      Cold: "[[1d6]]"        # frost = +1d6 cold (stat block prints 2d6)
+  slam:
+    bonus: 13
+    damage: 1d4+8
+    type: B
+    fields:
+      Energy Drain: 2 negative levels (once per round; Fort DC22 to remove after 24 hours)
+
+fullAttacks:
+  longswordFA: [longsword, longsword, slam]
+
+spells:
+  balefulPolymorph:
+    level: 5
+    save: Fort DC19 negates
+    fields:
+      Effect: Turned into a Small or smaller animal. If the Fort save fails, Will DC19 or also lose Ex/Su/Sp abilities and its own mind
+  shout:
+    level: 4
+    damage: 5d6
+    type: Sonic
+    save: Fort DC18 partial (half damage, not deafened)
+    fields:
+      Deafened: "[[2d6]] rounds on a failed save"
+      Area: 30-ft. cone
+  iceStorm:
+    level: 4
+    fields:
+      Damage (B): "[[3d6]]"
+      Damage (Cold): "[[2d6]]"
+      Area: 20-ft.-radius, 40-ft.-high cylinder; -4 Perception, half movement for 1 full round
+  fireShield:
+    level: 4
+    damage: 1d6+14
+    type: Fire or Cold
+    fields:
+      Effect: Creatures hitting her with natural or non-reach melee weapons take this damage. Warm shield (fire damage) halves cold damage to her, chill shield (cold damage) halves fire damage. 14 rounds
+  fireball:
+    level: 3
+    damage: 10d6
+    type: Fire
+    save: Ref DC17 half
+    fields:
+      Area: 20-ft.-radius spread
+  slow:
+    level: 3
+    save: Will DC17 negates
+    fields:
+      Effect: Up to 14 creatures within 30 ft. of each other are slowed for 14 rounds (one action per round, -1 attack/AC/Ref, half speed)
+  scorchingRay:
+    level: 2
+    prepared: 2
+    attack: 12
+    rays: 3
+    damage: 4d6
+    type: Fire
+  frigidTouch:
+    level: 2
+    attack: 18
+    damage: 4d6
+    type: Cold
+    fields:
+      Effect: Staggered for 1 round (no save)
+      Spellstrike: Can deliver with a longsword attack (+20, crit 17-20) instead of a touch
+  web:
+    level: 2
+    save: Ref DC16
+    fields:
+      Effect: Failed save = entangled and stuck; success = entangled but can move. Break free CMB/Escape Artist DC16. Burns for [[2d4]] fire damage
+      Area: 20-ft.-radius spread
+  frostbite:
+    level: 1
+    attack: 18
+    damage: 1d6+10
+    type: Nonlethal Cold
+    fields:
+      Effect: Fatigued (no save). 14 touches per casting
+      Spellstrike: Can deliver with a longsword attack (+20, crit 17-20) instead of a touch
+  shockingGrasp:
+    level: 1
+    prepared: 2
+    attack: 18
+    damage: 5d6
+    type: Electricity
+    fields:
+      Metal Armour: +3 to attack vs targets in metal armour
+      Spellstrike: Can deliver with a longsword attack (+20, crit 17-20) instead of a touch
+  rayOfFrost:
+    level: 0
+    attack: 12
+    damage: 1d3
+    type: Cold
+
+abilities:
+  dominate:
+    label: Dominate (Su)
+    fields:
+      Action: Standard action, 30 ft., one humanoid
+      Will Save: DC22 negates
+      Effect: As dominate person (CL 12th)
+  bloodDrain:
+    label: Blood Drain (Su)
+    fields:
+      Grapple (pin): "[[1d20 + 18]]"
+      Con Damage: "[[1d4]] each round she establishes or maintains a pin"
+      Heal: Vampire heals 5 hp (or gains 5 temp hp for 1 hour)
+  childrenOfTheNight:
+    label: Children of the Night (Su)
+    fields:
+      Frequency: 1/day, standard action
+      Rat Swarms: "[[1d6+1]]"
+      Bat Swarms: "[[1d4+1]]"
+      Wolves: "[[2d6]]"
+      Arrive In: "[[2d6]] rounds, serve for up to 1 hour"

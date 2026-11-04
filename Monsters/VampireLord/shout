@@ -1,0 +1,1 @@
+&{template:default} {{name=**Shout**}} {{**Spell:**= Level 4}} {{**Damage (Sonic):**= [[5d6]]}} {{**Fort Save:**= DC18 partial (half damage, not deafened)}} {{**Deafened:**= [[2d6]] rounds on a failed save}} {{**Area:**= 30-ft. cone}} {{**CL:**= 14th}}

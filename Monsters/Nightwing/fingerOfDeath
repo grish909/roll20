@@ -1,0 +1,1 @@
+&{template:default} {{name=**Finger of Death (SLA)**}} {{**Frequency:**= 1/day}} {{**Fort Save:**= DC22 partial}} {{**Failed Save:**= 140 damage}} {{**Successful Save:**= [[3d6+14]] damage}} {{**CL:**= 14th}}

@@ -1,0 +1,1 @@
+&{template:default} {{name=**Frostbite**}} {{**Spell:**= Level 1}} {{**Attack vs Touch:**= [[1d20 + 18]]}} {{**Damage (Nonlethal Cold):**= [[1d6+10]]}} {{**Effect:**= Fatigued (no save). 14 touches per casting}} {{**Spellstrike:**= Can deliver with a longsword attack (+20, crit 17-20) instead of a touch}} {{**CL:**= 14th}}

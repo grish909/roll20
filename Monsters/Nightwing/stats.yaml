@@ -1,0 +1,86 @@
+source: https://www.d20pfsrd.com/bestiary/monster-listings/undead/nightshade/nightwing/
+
+# Bonuses include the +2 profane from its own desecrating aura.
+# Melee touch (contagion, plane shift): BAB 12 + Str 10 - 2 size + 2 aura = +22.
+init: 8
+cl: 14
+
+attacks:
+  bite:
+    bonus: 23
+    damage: 4d10+18
+    type: B,P,S
+    crit: 19
+    fields:
+      Cold: "[[4d6]]"
+      Magic Drain: Will DC23 or one spell effect ends (see magicDrain)
+
+slas:
+  contagion:
+    frequency: At will
+    save: Fort DC19 negates
+    fields:
+      Melee Touch: "[[1d20 + 22]]"
+      Effect: Disease takes effect immediately (no onset); choose blinding sickness, bubonic plague, cackle fever, filth fever, leprosy, mindfire, red ache, shakes or slimy doom
+  unholyBlight:
+    frequency: At will
+    save: Will DC19 half (and not sickened)
+    fields:
+      Damage (vs good): "[[5d8]] (neutral creatures take half)"
+      Sickened: "[[1d4]] rounds on a failed save"
+      Area: 20-ft.-radius burst
+  confusion:
+    frequency: 3/day
+    save: Will DC19 negates
+    fields:
+      Effect: Confused for 14 rounds (see Status/confused)
+      Area: All creatures in a 15-ft.-radius burst
+  greaterDispelMagic:
+    frequency: 3/day
+    fields:
+      Dispel Check: "[[1d20 + 14]]"
+  holdMonster:
+    frequency: 3/day
+    save: Will DC20 negates
+    fields:
+      Effect: Paralyzed for 14 rounds; new Will save each round as a full-round action to end it
+  coneOfCold:
+    frequency: 1/day
+    save: Ref DC20 half
+    fields:
+      Damage (Cold): "[[14d6]]"
+      Area: 60-ft. cone
+  fingerOfDeath:
+    frequency: 1/day
+    save: Fort DC22 partial
+    fields:
+      Failed Save: 140 damage
+      Successful Save: "[[3d6+14]] damage"
+  planeShift:
+    frequency: 1/day
+    save: Will DC22 negates
+    fields:
+      Melee Touch: "[[1d20 + 22]]"
+      Effect: Target is sent to another plane
+
+abilities:
+  magicDrain:
+    label: Magic Drain (Su)
+    fields:
+      Trigger: On bite hit
+      Will Save: DC23 negates
+      Effect: One spell effect on the target ends (random if several). The nightwing heals 2x the spell's level in hp; excess becomes temporary hp for 1 hour.
+      Sunder: Bitten magic items - permanent items nonmagical for [[1d4]] rounds, charged items lose [[1d8]] charges, single-use items permanently nonmagical (Will DC23 resists)
+  desecratingAura:
+    label: Desecrating Aura (Su)
+    fields:
+      Range: 30-ft. emanation
+      Effect: Undead in the aura (including the nightwing) gain +2 profane on attack, damage and saves, +2 hp per HD, and +6 to channel negative energy DCs
+      Suppression: Dispel evil negates it (can resume on its turn, no action); consecrate/hallow and the aura negate each other where they overlap
+  channelEnergy:
+    label: Channel Negative Energy
+    fields:
+      Frequency: 8/day
+      Damage (Negative Energy): "[[7d6]] to living (heals undead)"
+      Will Save: DC28 half
+      Area: 30-ft. burst

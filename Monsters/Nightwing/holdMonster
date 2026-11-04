@@ -1,0 +1,1 @@
+&{template:default} {{name=**Hold Monster (SLA)**}} {{**Frequency:**= 3/day}} {{**Will Save:**= DC20 negates}} {{**Effect:**= Paralyzed for 14 rounds; new Will save each round as a full-round action to end it}} {{**CL:**= 14th}}

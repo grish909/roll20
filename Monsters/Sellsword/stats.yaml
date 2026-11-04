@@ -1,0 +1,37 @@
+source: https://www.d20pfsrd.com/bestiary/npc-s/npcs-cr-7/sellsword-human-fighter-8/
+
+init: 6
+
+attacks:
+  bastardSword:
+    label: +1 Bastard Sword
+    bonus: [14, 9]
+    damage: 1d10+7
+    type: S
+    crit: 17
+  bastardSwordPA:            # Power Attack, one-handed (BAB 8): -3 attack, +6 damage
+    label: +1 Bastard Sword (PA)
+    bonus: [11, 6]
+    damage: 1d10+13
+    type: S
+    crit: 17
+  vitalStrike:               # standard action; doubles weapon dice only
+    label: Vital Strike (Bastard Sword)
+    bonus: 14
+    damage: 2d10+7
+    type: S
+    crit: 17
+  spikedGauntlet:
+    bonus: [11, 6]
+    damage: 1d4+3
+    type: P
+  javelin:
+    bonus: 10
+    damage: 1d6+3
+    type: P
+
+fullAttacks:
+  bastardSwordFA: [bastardSword, bastardSword]
+  bastardSwordPAFA:
+    label: Full Attack (PA)
+    attacks: [bastardSwordPA, bastardSwordPA]

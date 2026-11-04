@@ -23,8 +23,12 @@ New monsters and NPCs should be written as a `stats.yaml` in the creature folder
 3. `python3 build.py Monsters/CreatureName` — writes the macro files. Commit both `stats.yaml` and the generated macros.
 
 Rules:
-- In a folder with `stats.yaml`, every macro comes from it. Never hand-edit a generated macro — change `stats.yaml` and rebuild. Anything that doesn't fit `attacks`/`fullAttacks`/`poison`/`maintain`/`swallowWhole`/`slas` goes under `abilities:` as free-form fields.
+- In a folder with `stats.yaml`, every macro comes from it. Never hand-edit a generated macro — change `stats.yaml` and rebuild. Anything that doesn't fit `attacks`/`fullAttacks`/`poison`/`maintain`/`swallowWhole`/`slas`/`spells` goes under `abilities:` as free-form fields.
 - `build.py --check` (run by the pre-commit hook) fails if a generated macro is out of date or a folder has a macro that isn't in its `stats.yaml`. It never deletes files — remove stale ones yourself.
+- `slas:` is for spell-like abilities (labelled "(SLA)", with a Frequency). `spells:` is for prepared/known class spells (magus, cleric...), with level, prepared count, touch attack and `rays`. Following the buff rule above, only damage- or save-based spells get macros.
+- An attack's extra `fields` (e.g. `Cold: "[[1d6]]"` for a frost weapon, energy drain on a slam) are repeated and numbered on every hit in its full attack (`Cold 1`, `Cold 2`).
+- Bake the creature's real numbers into its own spell macros (DC, CL, touch bonus) rather than pointing at the generic `Spells/` macros, which prompt for caster level and use other DCs.
+- Stat-block bonuses usually already include the creature's own auras or constant buffs (e.g. the nightwing's +2 desecrating aura, *magic fang*); don't add them again. Derive touch bonuses from BAB + Str (melee) / Dex (ranged) + size, plus the same always-on bonuses, and note the arithmetic in a YAML comment.
 - `bonus: [11, 6]` lists iteratives. In a full attack, each repeat of a weapon takes the next iterative; repeated natural attacks (2 claws) reuse their single bonus.
 - Older creatures are hand-written macros with no `stats.yaml`; leave them unless asked to convert. To convert one, write the `stats.yaml`, rebuild, and diff the output against the old files (whitespace changes are expected; anything else is a mistake in the yaml or a bug in the old macro).
 - If a new macro pattern keeps recurring under `abilities:`, add a proper section for it to `build.py` and `templates/stats.yaml`.
@@ -75,6 +79,8 @@ Pull stats from d20pfsrd via WebFetch. The first fetch summarizes — always do 
 
 - `Allip`, `Bodak`, `Gug`, `DenizenOfLeng` — minimal attack-only creatures.
 - `Seugathi`, `CrimsonWorm`, `Cyclops` — built from `stats.yaml`; copy these when writing a new one.
+- `VampireLord` — `stats.yaml` with prepared `spells:` (rays, touch spells with spellstrike notes), weapon extra damage carried into the full attack, vampire abilities.
+- `Nightwing` — `stats.yaml` with a large `slas:` set, aura, channel energy. `Sellsword` — fighter with Power Attack and Vital Strike variants. `DreadWraith` — minimal incorporeal touch.
 - `GenieMarid`, `Cyclops` — single attack + full-attack (`*FA`) pairing, crit-range weapon syntax.
 - `Devourer` — special attack with no roll, text-only effect field.
 - `Tendriculos`, `FormlessSpawn`, `SnakeConstrictorGiantAnaconda`, `JellyTar` — grab/maintain/swallow/constrict patterns.

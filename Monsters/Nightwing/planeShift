@@ -1,0 +1,1 @@
+&{template:default} {{name=**Plane Shift (SLA)**}} {{**Frequency:**= 1/day}} {{**Will Save:**= DC22 negates}} {{**Melee Touch:**= [[1d20 + 22]]}} {{**Effect:**= Target is sent to another plane}} {{**CL:**= 14th}}

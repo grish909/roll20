@@ -53,8 +53,12 @@ def signed(n):
 
 def title(key):
     """shortSword -> Short Sword"""
-    spaced = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", " ", key)
-    return spaced[:1].upper() + spaced[1:]
+    words = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", " ", key).split(" ")
+    small = {"of", "the", "and", "a", "an", "to", "in", "on", "for"}
+    out = []
+    for i, w in enumerate(words):
+        out.append(w.lower() if i and w.lower() in small else w[:1].upper() + w[1:])
+    return " ".join(out)
 
 
 def roll(expr):
@@ -125,6 +129,12 @@ def build_attack(key, atk, stats):
     return macro(atk["label"], fields + extra_fields(atk))
 
 
+def numbered(label, n):
+    """'Cold' -> 'Cold 3'; 'Con Drain (Fort DC23)' -> 'Con Drain 3 (Fort DC23)'"""
+    head, sep, tail = label.partition(" (")
+    return f"{head} {n}{sep}{tail}"
+
+
 def build_full_attack(key, spec, stats):
     if isinstance(spec, list):
         spec = {"attacks": spec}
@@ -144,6 +154,8 @@ def build_full_attack(key, spec, stats):
         fields += [(atk_label, attack_roll(atk, bonus)), (dmg_label, roll(atk["damage"]))]
         if atk.get("grab"):
             fields.append((f"Grab {n}", grab_roll(stats)))
+        # Per-attack extras (e.g. "Cold: [[1d6]]") apply on every hit, so number them too.
+        fields += [(numbered(label, n), value) for label, value in extra_fields(atk)]
         if atk.get("poison") and a not in poisoned:
             poisoned.append(a)
     for a in poisoned:
@@ -191,6 +203,40 @@ def build_sla(key, spec, stats):
     return macro(spec.get("label", f"{title(key)} (SLA)"), fields)
 
 
+SPELL_KEYS = ["label", "level", "prepared", "attack", "vs", "rays", "damage", "type", "save", "cl", "fields"]
+
+
+def build_spell(key, spec, stats):
+    """A prepared/known spell (not an SLA): optional touch attack(s), damage, save, CL."""
+    check_keys(f"spells.{key}", spec, SPELL_KEYS)
+    cl = spec.get("cl", stats.get("cl"))
+    if cl is None:
+        raise StatsError(f"spells.{key}: no caster level (set top-level `cl:` or `cl:` on the spell)")
+    if "rays" in spec and "attack" not in spec:
+        raise StatsError(f"spells.{key}: `rays` needs an `attack` bonus")
+    fields = []
+    if spec.get("level") is not None or spec.get("prepared"):
+        lvl = "" if spec.get("level") is None else "Cantrip" if spec["level"] == 0 else f"Level {spec['level']}"
+        prep = f"prepared x{spec['prepared']}" if spec.get("prepared") else ""
+        fields.append(("Spell", ", ".join(x for x in (lvl, prep) if x)))
+    dtype = f" ({spec['type']})" if spec.get("type") else ""
+    vs = spec.get("vs", "Touch")
+    rays = spec.get("rays", 1)
+    if "attack" in spec:
+        for n in range(1, rays + 1):
+            num = f" {n}" if rays > 1 else ""
+            fields.append((f"{'Ray' if rays > 1 else 'Attack'}{num} vs {vs}", roll(f"1d20 {signed(spec['attack'])}")))
+            if spec.get("damage"):
+                fields.append((f"Damage{num}{dtype}", roll(spec["damage"])))
+    elif spec.get("damage"):
+        fields.append((f"Damage{dtype}", roll(spec["damage"])))
+    if spec.get("save"):
+        fields.append(save_field(spec["save"]))
+    fields += extra_fields(spec)
+    fields.append(("CL", ordinal(cl)))
+    return macro(spec.get("label", title(key)), fields)
+
+
 def build_ability(key, spec, stats):
     check_keys(f"abilities.{key}", spec, ["label", "fields"], ["fields"])
     return macro(spec.get("label", title(key)), extra_fields(spec))
@@ -214,32 +260,41 @@ def ordinal(n):
 # ---------------------------------------------------------------------------
 
 TOP_KEYS = ["source", "init", "cmb", "cl", "attacks", "fullAttacks", "poison", "maintain",
-            "swallowWhole", "slas", "abilities"]
+            "swallowWhole", "slas", "spells", "abilities"]
 
 
 def build_creature(stats):
     """Return {filename: macro text} for one stats.yaml."""
     check_keys("stats.yaml", stats, TOP_KEYS, ["init"])
-    out = {"init": build_init(stats["init"])}
+    out = {}
+
+    def add(name, text):
+        if name in out:
+            raise StatsError(f"two macros would both be named {name!r}; rename one of the keys")
+        out[name] = text
+
+    add("init", build_init(stats["init"]))
 
     attacks = stats.get("attacks") or {}
     for key, atk in attacks.items():
         check_keys(f"attacks.{key}", atk, ATTACK_KEYS, ["bonus", "damage"])
         atk.setdefault("label", title(key))
         atk["bonuses"] = atk["bonus"] if isinstance(atk["bonus"], list) else [atk["bonus"]]
-        out[key] = build_attack(key, atk, stats)
+        add(key, build_attack(key, atk, stats))
     for key, spec in (stats.get("fullAttacks") or {}).items():
-        out[key] = build_full_attack(key, spec, stats)
+        add(key, build_full_attack(key, spec, stats))
     if stats.get("poison"):
-        out["poison"] = build_poison(stats["poison"], stats)
+        add("poison", build_poison(stats["poison"], stats))
     if stats.get("maintain"):
-        out["maintain"] = build_maintain(stats["maintain"], stats)
+        add("maintain", build_maintain(stats["maintain"], stats))
     if stats.get("swallowWhole"):
-        out["swallowWhole"] = build_swallow(stats["swallowWhole"], stats)
+        add("swallowWhole", build_swallow(stats["swallowWhole"], stats))
     for key, spec in (stats.get("slas") or {}).items():
-        out[key] = build_sla(key, spec, stats)
+        add(key, build_sla(key, spec, stats))
+    for key, spec in (stats.get("spells") or {}).items():
+        add(key, build_spell(key, spec, stats))
     for key, spec in (stats.get("abilities") or {}).items():
-        out[key] = build_ability(key, spec, stats)
+        add(key, build_ability(key, spec, stats))
 
     for name in out:
         if not re.match(r"^[a-z][A-Za-z0-9]*$", name):

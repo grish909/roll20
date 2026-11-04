@@ -58,6 +58,23 @@ slas:
   #   fields:
   #     Dispel Check: "[[1d20 + 6]]"
 
+spells:                      # prepared/known spells (not SLAs); skip pure self-buffs
+  scorchingRay:              # -> "Scorching Ray"
+    level: 2                 # optional; shown with `prepared` as "Spell: Level 2, prepared x2"
+    prepared: 2
+    attack: 12               # touch attack bonus -> "Attack vs Touch"; omit for area/save spells
+    # vs: Touch              # default Touch
+    rays: 3                  # several attack rolls, numbered "Ray 1", "Damage 1", ...
+    damage: 4d6              # per ray when `rays` is set
+    type: Fire
+  fireball:
+    level: 3
+    damage: 10d6
+    type: Fire
+    save: Ref DC17 half      # starts with Fort/Ref/Will -> "Ref Save: DC17 half"
+    # cl: 14                 # default: top-level cl
+    # fields: {Area: 20-ft. radius}
+
 abilities:                   # anything else: a named card with free-form fields
   frightfulPresence:
     label: Frightful Presence (Su)

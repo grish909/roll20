@@ -1,0 +1,12 @@
+source: https://www.d20pfsrd.com/bestiary/monster-listings/undead/wraith/wraith-dread/
+
+init: 13
+
+attacks:
+  incorporealTouch:
+    bonus: 20
+    vs: Touch
+    damage: 3d6
+    type: Negative Energy
+    fields:
+      Con Drain (Fort DC23 negates): "[[1d8]]"
